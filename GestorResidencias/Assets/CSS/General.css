@@ -1,0 +1,280 @@
+﻿
+.campo-obligatorio {
+    color: #FF5733;
+    font-size: 10px;
+    font-weight: normal !important;
+}
+
+.fontsize6bold {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.fontbold {
+    font-weight: bold;
+}
+
+.encabezado-colorfondo {
+    background: #372d86;
+    color: #fff;
+}
+
+.alineacion-vertical {
+    display: flex;
+    align-items: center;
+}
+
+.fontsizeh6 {
+    font-size: 12px;
+}
+
+.barranav-imagenbuscar {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+}
+
+.centrartexto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buscartext {
+    width: 250px;
+    padding-left: 30px;
+}
+
+.footer-colorfondo {
+    background: #372d86;
+}
+
+.footer-imagen {
+    width: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.contenidopagina {
+    min-height: calc(-136px + 100vh);
+}
+
+.texto-encima-imagen-pie1RC {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.texto-encima-imagen-pie2R {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+}
+
+.contenedor-imagen {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.modalBackground {
+    position: absolute;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    background-color: #000;
+    filter: alpha(opacity=60);
+    -moz-opacity: 0.6;
+    opacity: 0.6;
+}
+
+.tabla-encabezado {
+    font-size: 15px;
+    text-decoration:none;
+}
+
+tr.pager-row td {
+    border-top: solid 1px #bbd9ee;
+    font-size: 12px !important;
+}
+
+.pager {
+    text-align: left;
+    padding: 10px;
+}
+
+.pager span.command,
+.pager span.current,
+.pager a.command,
+tr.pager-row td a {
+    color: #003A63;
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    margin-left: 5px;
+    text-decoration: none;
+    border: solid 1px #003A63;
+}
+
+.pager a.command:hover,
+tr.pager-row td a:hover {
+    border: solid 2px #808080;
+    background-color: #808080;
+    color: #fff;
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.pager span.current,
+tr.pager-row td span {
+    border: solid 1px #000000;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    margin-left: 5px;
+}
+
+tr.pager-row td {
+    border-top: none;
+    text-align: left;
+}
+
+tr.pager-row table {
+    height: 35px;
+    width: auto;
+    margin: 0 auto 0 initial;
+}
+
+.tabla-sinsubrayado  tbody  tr  th  a {
+    text-decoration:none;
+}
+
+.modal-headers {
+    min-height: 16.43px;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.modal-bodys {
+    position: relative;
+    padding: 15px
+}
+
+.modal-footers {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5
+}
+
+.fechaicongrp {
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+
+.img-circular {
+    border-radius: 50%;
+}
+
+.background-titulo {
+    background-image: url(Assets/Imagenes/Index/Fondo.png);
+    color: white;
+    background-position: center center;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 15.5rem;
+    padding-bottom: 11rem;
+}
+
+.btn-conocemas {
+    background-color: #7A70C4;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.img-backgroun-circular {
+    width: 11rem;
+    padding:40px;
+}
+
+.contenedor-imagen-circulo {
+    background-color: #7A70C4;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.btn-hover-lila {
+    background-color: #7A70C4;
+    transition: background-color 0.3s;
+}
+
+.btn-hover-lila:hover {
+    background-color: #867BDB;
+}
+
+.btn-hover-general {
+    background-color: #372d86;
+    transition: background-color 0.3s;
+}
+
+.btn-hover-general:hover {
+    background-color: #5344C8;
+}
+
+.ibtn-hover-general {
+    transition: transform 0.3s;
+}
+
+.ibtn-hover-general:hover {
+    transform: scale(1.2);
+}
+
+.ibtn-hover-modulos {
+    transition: transform 0.3s;
+}
+
+.ibtn-hover-modulos:hover {
+    transform: scale(1.1);
+}
+
+.ddl-hover-modulos {
+    transition: transform 0.3s;
+}
+
+.ddl-hover-modulos:hover {
+    transform: scale(1.06);
+}
+
+.lbtn-general {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.lbtn-general:hover {
+    color: #838383;
+}
+
+.lineheight25 {
+    line-height: 120%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 15px;
+}

@@ -1,0 +1,35 @@
+﻿@media screen and (max-width:576px) {
+    .modal-responsivo {
+        width: 380px;
+    }
+}
+
+@media screen and (min-width:577px) and (max-width:768px) {
+    .modal-responsivo {
+        width: 550px;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:992px) {
+    .modal-responsivo {
+        width: 750px;
+    }
+}
+
+@media screen and (min-width:576px) {
+    .modal-responsivo2 {
+        width: 380px;
+    }
+}
+
+@media screen and (min-width:577px) and (max-width:768px) {
+    .modal-responsivo2 {
+        width: 550px;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:992px) {
+    .modal-responsivo2 {
+        width: 750px;
+    }
+}

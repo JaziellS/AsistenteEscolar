@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="GestorResidencias.Principal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <link href="Assets/CSS/bootstrap.min.css" rel="stylesheet"/>
+    <link href="Assets/CSS/General.css" rel="stylesheet"/>
+
+    <script src="Assets/Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="Assets/Scripts/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="Assets/Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="Assets/Scripts/bootstrap.bundle.js" type="text/javascript"></script>
+    <script src="Assets/Scripts/bootstrap-table.js" type="text/javascript"></script>
+    <script src="Assets/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="Assets/Scripts/light-bootstrap-dashboard.js" type="text/javascript"></script>
+    <script src="Assets/Scripts/moment.min.js" type="text/javascript"></script>
+    <script src="Assets/Scripts/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <script src="Assets/Scripts/sweetalert.min.js" type="text/javascript"></script>
+    
+    <title>Gestor Residencias</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <style>
+        .notification-count {
+              position: absolute;
+              z-index: 1;
+              top: -8px;
+              right: 13px;
+              width: 21px;
+              height: 21px;
+              line-height: 20px;
+              font-size: 15px;
+              border-radius: 50%;
+              background-color: #ff4927;
+              color: #fff;
+              text-align:center;
+           
+        }
+        .btn-en-dropdown { 
+            padding:10px 25px;
+            text-decoration: none!important;   
+            text-align:left;
+        }
+        
+        .dropdown-toggle::after {
+            display:none;
+        }
+
+        .circuloPM img {   
+            width: 65px;
+            height:65px;
+            object-fit: cover;
+        }
+        .caret{display:inline-block;width:0;height:0;margin-left:2px;vertical-align:middle;border-top:4px dashed;border-top:4px solid\9;border-right:4px solid transparent;border-left:4px solid transparent; color:white;}
+    </style>
+    <form id="form1" runat="server">
+        <header>
+            <div class="encabezado-colorfondo" style="padding-bottom:5px; padding-top:10px;">
+                <div class="container">
+                    <section class="row alineacion-vertical">
+                        <article class="col-5 col-sm-6 col-md-3 col-lg-2">
+                            <asp:ImageButton runat="server" CssClass="ibtn-hover-general" ID="ibtnHomePM" OnClick="ibtnHome_Click"/>
+                        </article>
+                        <div class="col-7 col-sm-6 col-md-6 col-lg-4" style="position:relative">
+                            <div style="position:absolute;left:5px;top:-15px">
+                                <asp:TextBox runat="server" ID="tboxBusquedaPM" ClientIDMode="Static" placeholder="Buscar en Sitio..." CssClass="form-control fontsizeh6 buscartext"></asp:TextBox>
+                            </div>
+                            <div style="position:absolute;left:5px;top:-15px">
+                                <asp:ImageButton runat="server" ID="ibtnBusquedaPM" ClientIDMode="Static" OnClick="ibtnBusquedaPM_Click" CssClass="barranav-imagenbuscar" ImageUrl="~/Assets/Imagenes/Principal/Search.png"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-3 col-md-2 col-lg-1">
+                            <div class="centrartexto" id="divDropdown">
+                                <asp:ImageButton ID="ibtnEdcorePM" CssClass="ibtn-hover-general" style="padding-right:10px;" runat="server" OnClick="ibtnEdcorePM_Click" />   
+                                <asp:ImageButton ID="ibtnFacebookPM" CssClass="ibtn-hover-general"  style="padding-right:10px;" runat="server" OnClick="ibtnFacebookPM_Click" />   
+                                <asp:ImageButton ID="ibtnPaginaOficialPM" CssClass="ibtn-hover-general"  style="padding-right:10px;" runat="server" OnClick="ibtnPaginaOficialPM_Click" />
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-9 col-md-11 col-lg-4 offset-lg-1 centrartexto">
+                            <div class="dropdown" style="padding-right:20px;">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration:none;">
+                                    <%= sNumeroNotificaciones.ToString() %>  
+                                    <asp:Image CssClass="ibtn-hover-general" ID="iCampanaNotiPM" runat="server"/>
+                                </a>
+                                <ul class="dropdown-menu" style="" aria-labelledby="dropdownMenuButton1">
+                                    <%= sHtmlNotificaciones.ToString() %>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration:none;">
+                                    <div class="centrartexto ddl-hover-modulos">
+                                        <div class="circuloPM text-center">
+                                            <asp:Image ID="iFotoPerfilPM" runat="server" style="border-radius:50%;"/>
+                                        </div>
+                                        <div>
+                                            <asp:Label runat="server" ID="lblNombreCompletoPM" CssClass="" style="font-size:13px; font-weight:bold; color:white; padding-left:10px;"></asp:Label>
+                                            <span class="caret"></span>
+                                            <br />
+                                            <asp:Label runat="server" ID="lblNo" CssClass="fontsizeh6" style="color:white; padding-left:10px;"></asp:Label>
+                                        </div>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><asp:LinkButton ID="lbtnModuloAdministrador" runat="server" Text="Modulo Administrador" CssClass="dropdown-item" OnClick="lbtnModuloAdministrador_Click"></asp:LinkButton></li>
+                                    <li><asp:LinkButton ID="lblEditarPerfil" runat="server" Text="Editar Perfil" CssClass="dropdown-item" OnClick="lblEditarPerfil_Click"></asp:LinkButton></li>
+                                    <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" Text="Cerrar Sesion" CssClass="dropdown-item" OnClick="lbtnCerrarSesion_Click"></asp:LinkButton></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </header>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <br />
+        <footer class="footer-colorfondo">
+            <div class="container text-center">
+                <asp:Image ID="imgLogoUniPM" runat="server" CssClass="footer-imagen"/>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
+
