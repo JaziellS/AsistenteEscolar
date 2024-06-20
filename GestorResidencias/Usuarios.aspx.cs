@@ -282,6 +282,12 @@ namespace GestorResidencias
 
                     String _sIdUser = gvUsuarios.DataKeys[index].Values[0].ToString();
 
+                    if(_sIdUser == Generales.glsUsuarioSession.IdUsuario)
+                    {
+                        oMensajes.MuestraMensaje(this, "Advertencia", "No puedes eliminar tu propio usuario/perfil con el que estas en sesion.", Mensajes.TipoMensaje.Error);
+                        return;
+                    }
+
                     Session["sIdUser"] = _sIdUser;
 
                     oMensajes.MuestraMensajeConRespuesta(this, "Advertencia", "Seguro que deseas eliminar este usuario?, los cambios realizados no se pueden revertir.", Mensajes.TipoMensaje.Precaucion, "EliminarUsuario");
